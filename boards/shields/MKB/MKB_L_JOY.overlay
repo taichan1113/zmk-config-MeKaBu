@@ -44,7 +44,7 @@
             invert;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_Y>;
-            report-on-change-only
+            report-on-change-only;
         };
     };
     
