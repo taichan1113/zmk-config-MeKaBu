@@ -25,10 +25,10 @@
         x-ch {
             io-channels = <&adc 2>;
             mv-mid = <1650>;
-            mv-min-max = <1600>;
-            mv-deadzone = <75>;
+            mv-min-max = <1650>;
+            mv-deadzone = <25>;
             scale-multiplier = <1>;
-            scale-divisor = <150>;
+            scale-divisor = <300>;
             invert;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
@@ -37,10 +37,10 @@
         y-ch {
             io-channels = <&adc 3>;
             mv-mid = <1650>;
-            mv-min-max = <1600>;
-            mv-deadzone = <75>;
+            mv-min-max = <1650>;
+            mv-deadzone = <25>;
             scale-multiplier = <1>;
-            scale-divisor = <150>;
+            scale-divisor = <300>;
             invert;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_Y>;
