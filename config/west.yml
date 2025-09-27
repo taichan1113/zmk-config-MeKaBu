@@ -10,13 +10,16 @@ manifest:
       url-base: https://github.com/te9no
     - name: kot149
       url-base: https://github.com/kot149
+    - name: BP
+      url-base: https://github.com/taichan1113
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
     - name: petejohanson
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: zmkfirmware
+      # remote: zmkfirmware
+      remote: BP
       # remote: te9no
       revision: main
       import: app/west.yml
