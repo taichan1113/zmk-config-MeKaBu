@@ -17,14 +17,6 @@
     };
 };
 
-/ {
-    trackball_listener2: trackball_listener2 {
-        compatible = "zmk,input-listener";
-        device = <&trackball2>;
-        status = "okay";
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-    };
-};
 
 &spi0 {
     status = "okay";
@@ -34,7 +26,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball: pd@0 {
+    trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
