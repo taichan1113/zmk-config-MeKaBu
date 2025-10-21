@@ -1,4 +1,14 @@
 if SHIELD_MKB_R_ENC || SHIELD_MKB_R_JOY || SHIELD_MKB_R_TB || SHIELD_MKB_R_TBv3 || SHIELD_MKB_R_RZT || SHIELD_MKB_R_TPD || SHIELD_MKB_R_KEY
+
+    config ZMK_KEYBOARD_NAME
+        default "MeKaBu"
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 1
+
     config ZMK_SPLIT
         default y
         
@@ -27,14 +37,6 @@ if SHIELD_MKB_R_ENC || SHIELD_MKB_R_JOY || SHIELD_MKB_R_TB || SHIELD_MKB_R_TBv3 
 endif 
 
 if SHIELD_MKB_L_Base || SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB || SHIELD_MKB_L_RZT || SHIELD_MKB_L_TPD || SHIELD_MKB_L_KEY
-    config ZMK_KEYBOARD_NAME
-        default "MeKaBu"
-
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
-
-    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 1
 
     config ZMK_SPLIT
         default y
