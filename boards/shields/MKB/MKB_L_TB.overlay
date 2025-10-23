@@ -26,7 +26,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball: trackball@0 {
+    trackball_left: trackball-left@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -46,15 +46,15 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        trackball_split: trackball_split@0 {
+        trackball_split: trackball-split@0 {
             compatible = "zmk,input-split";
             status = "okay";
-            device = <&trackball>;
+            device = <&trackball_left>;
             reg = <0>;
         };
     };
 
-    trackball_listener: trackball_listener {
+    trackball_listener: trackball-listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball_split>;
