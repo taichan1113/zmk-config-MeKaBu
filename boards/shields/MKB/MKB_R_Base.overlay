@@ -6,9 +6,9 @@
 #include "MKB_pinctrl_R.dtsi"
 #include "MKB.dtsi"
 
-// &default_transform {
-//     col-offset = <6>;
-// };
+&default_transform {
+    col-offset = <6>;
+};
 
 / {
     chosen {
