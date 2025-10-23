@@ -6,9 +6,6 @@ if SHIELD_MKB_R_Base || SHIELD_MKB_R_ENC || SHIELD_MKB_R_JOY || SHIELD_MKB_R_TB 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
 
-    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 1
-
     config ZMK_SPLIT
         default y
         

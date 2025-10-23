@@ -17,16 +17,6 @@
     };
 };
 
-/ {
-    trackball_listener2: trackball_listener2 {
-        compatible = "zmk,input-listener";
-        device = <&trackball2>;
-        status = "okay";
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-    };
-};
-
-
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -45,5 +35,14 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+    };
+};
+
+/ {
+    trackball_listener2: trackball_listener2 {
+        compatible = "zmk,input-listener";
+        device = <&trackball2>;
+        status = "okay";
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
 };
