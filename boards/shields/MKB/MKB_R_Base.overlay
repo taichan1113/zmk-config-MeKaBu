@@ -91,7 +91,7 @@
         
         layer0 {
             layers = <0>;
-            input-processors = <&zip_xy_scaler 1 150>, <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_scaler 1 50>, <&zip_xy_to_scroll_mapper>;
         };
     };
 
