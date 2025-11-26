@@ -1,4 +1,15 @@
-if SHIELD_MKB_L_JOY
+if SHIELD_Central
+    config ZMK_KEYBOARD_NAME
+        default "MeKaBu"
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+    
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 1
+endif
+
+if SHIELD_MKB_L
 
     config ZMK_SPLIT
         default y
@@ -27,17 +38,7 @@ if SHIELD_MKB_L_JOY
     endif # LVGL
 endif
 
-if SHIELD_MKB_R_Base || SHIELD_MKB_R_TB
-
-    config ZMK_KEYBOARD_NAME
-        default "MeKaBu"
-
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
-    
-    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 1
-
+if SHIELD_MKB_R
     config ZMK_SPLIT
         default y
         

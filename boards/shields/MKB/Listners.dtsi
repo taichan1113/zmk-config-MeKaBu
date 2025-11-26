@@ -1,0 +1,23 @@
+/{
+  split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    
+    split_peripheral: split_peripheral@0 {
+      compatible = "zmk,input-split";
+      reg = <0>;
+    };
+    
+  };
+    
+  listner_central: listner_central {
+    compatible = "zmk,input-listener";
+    status = "disabled";
+  };
+    
+  listner_peripheral: listner_peripheral {
+    compatible = "zmk,input-listener";
+    status = "disabled";
+  };
+    
+};
