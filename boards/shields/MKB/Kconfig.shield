@@ -1,20 +1,20 @@
+config SHIELD_Central
+    def_bool $(shields_list_contains,Central)
+
 config SHIELD_MKB_L
     def_bool $(shields_list_contains,MKB_L)
-
-config SHIELD_MKB_L_ENC
-    def_bool $(shields_list_contains,MKB_L_ENC)
 
 config SHIELD_MKB_R
     def_bool $(shields_list_contains,MKB_R)
 
-config SHIELD_MKB_R_ENC
-    def_bool $(shields_list_contains,MKB_R_ENC)
+config SHIELD_TB_C
+    def_bool $(shields_list_contains,TB_C)
 
-config SHIELD_TB
-    def_bool $(shields_list_contains,TB)
+config SHIELD_TB_P
+    def_bool $(shields_list_contains,TB_P)
 
-config SHIELD_Central
-    def_bool $(shields_list_contains,Central)
+config SHIELD_ENC_L
+    def_bool $(shields_list_contains,ENC_L)
 
-config SHIELD_Peripheral
-    def_bool $(shields_list_contains,Peripheral)
+config SHIELD_ENC_R
+    def_bool $(shields_list_contains,ENC_R)

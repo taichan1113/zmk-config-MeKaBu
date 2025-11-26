@@ -25,17 +25,8 @@
     };
 };
 
-&listner_central{
-    device = <&trackball>;
-    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
-};
-
-&listner_peripheral{
-    device = <&split_peripheral>;
-    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
-};
-
 &split_peripheral{
     device = <&trackball>;
+    status = "okay";
     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
 };

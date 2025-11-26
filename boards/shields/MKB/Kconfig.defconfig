@@ -12,7 +12,7 @@ if SHIELD_Central
         default 1
 endif
 
-if SHIELD_MKB_L || SHIELD_MKB_R || SHIELD_MKB_L_ENC || SHIELD_MKB_R_ENC
+if SHIELD_MKB_L || SHIELD_MKB_R
     config ZMK_SPLIT
         default y
         

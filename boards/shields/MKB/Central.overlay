@@ -1,7 +1,0 @@
-&listner_peripheral{
-  status = "okay";
-};
-
-&listner_central{
-  status = "okay";
-};
