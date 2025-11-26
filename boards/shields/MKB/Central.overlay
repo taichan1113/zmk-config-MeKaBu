@@ -1,7 +1,3 @@
-&pointer_central{
-  status = "okay";
-};
-
 &listner_peripheral{
   status = "okay";
 };

@@ -1,7 +1,3 @@
-&pointer_peripheral{
-  status = "okay";
-};
-
 &split_peripheral{
   status = "okay";
 };
