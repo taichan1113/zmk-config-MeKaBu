@@ -2,11 +2,11 @@
 #include "Listners.dtsi"
 
 /{
-    aliases: {
+    aliases {
         pointer-pripheral = &trackball_peripheral;
         pointer-central = &trackball_central;
     };
-}
+};
 
 &spi0 {
     status = "okay";
