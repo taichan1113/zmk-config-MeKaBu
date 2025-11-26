@@ -1,3 +1,7 @@
+pointer-central{
+  status = "okay";
+};
+
 &listner_peripheral{
   status = "okay";
 };
