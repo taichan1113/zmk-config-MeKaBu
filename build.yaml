@@ -10,6 +10,15 @@ include:
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_TB_Central
 
+  - board: seeeduino_xiao_ble
+    shield: MKB_L_ENC Central rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_ENC_Central
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_R TB Peripheral rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_R_TB_Peripheral
 
   # - board: seeeduino_xiao_ble
   #   shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled

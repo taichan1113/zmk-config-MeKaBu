@@ -1,3 +1,7 @@
+#include "KB_pinctrl.dtsi"
+#include "KB_Base.dtsi"
+
+// Encoders
 &left_encoder {
     a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
