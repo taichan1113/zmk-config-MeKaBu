@@ -11,10 +11,10 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    pointer_central: trackball-central@0 {
+    pointer_central: trackball-central@1 {
         status = "disabled";
         compatible = "pixart,pmw3610";
-        reg = <0>;
+        reg = <1>;
         spi-max-frequency = <1500000>;
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <800>;
@@ -24,10 +24,10 @@
         force-awake;
     };
 
-    pointer_peripheral: trackball-peripheral@1 {
+    pointer_peripheral: trackball-peripheral@0 {
         status = "disabled";
         compatible = "pixart,pmw3610";
-        reg = <1>;
+        reg = <0>;
         spi-max-frequency = <1500000>;
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <800>;
