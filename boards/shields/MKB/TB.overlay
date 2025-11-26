@@ -5,7 +5,7 @@
 
 /{
     aliases {
-        pointer-pripheral = &trackball_peripheral;
+        pointer-peripheral = &trackball_peripheral;
         pointer-central = &trackball_central;
     };
 };
