@@ -1,4 +1,4 @@
-pointer-peripheral{
+&pointer_peripheral{
   status = "okay";
 };
 

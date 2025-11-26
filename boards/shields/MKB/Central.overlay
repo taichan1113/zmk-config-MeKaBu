@@ -1,4 +1,4 @@
-pointer-central{
+&pointer_central{
   status = "okay";
 };
 

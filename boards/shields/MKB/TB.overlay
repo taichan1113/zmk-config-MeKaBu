@@ -3,13 +3,6 @@
 #include "TB_pinctrl.dtsi"
 #include "Listners.dtsi"
 
-/{
-    aliases {
-        pointer-peripheral = &trackball_peripheral;
-        pointer-central = &trackball_central;
-    };
-};
-
 &spi0 {
     status = "okay";
     cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>;
@@ -18,7 +11,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball_central: trackball-central@0 {
+    pointer_central: trackball-central@0 {
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -31,7 +24,7 @@
         force-awake;
     };
 
-    trackball_peripheral: trackball-peripheral@1 {
+    pointer_peripheral: trackball-peripheral@1 {
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <1>;
