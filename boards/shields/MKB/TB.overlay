@@ -39,7 +39,7 @@
 };
 
 &listner_central{
-    device = <&trackball_central>;
+    device = <&pointer_central>;
     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
 };
 
@@ -49,6 +49,6 @@
 };
 
 &split_peripheral{
-    device = <&trackball_peripheral>;
+    device = <&pointer_peripheral>;
     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 2>, <&zip_xy_to_scroll_mapper>;
 };
