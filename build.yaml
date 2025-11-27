@@ -8,14 +8,14 @@ include:
     artifact-name: MKB_L_TB_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R TB_C rgbled_adapter nice_oled
+    shield: Central MKB_R TB_C rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
       - -DZMK_CONFIG=config/Central.conf;config/MKB.conf;config/TB.conf
     artifact-name: MKB_R_TB_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L ENC_L rgbled_adapter nice_oled
+    shield: Central MKB_L ENC_L rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
       - -DZMK_CONFIG=config/Central.conf;config/MKB.conf
