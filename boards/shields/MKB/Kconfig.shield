@@ -1,6 +1,9 @@
 config SHIELD_CENTRAL
     def_bool $(shields_list_contains,Central)
 
+config SHIELD_PERIPHERAL
+    def_bool $(shields_list_contains,Peripheral)
+
 config SHIELD_MKB_L
     def_bool $(shields_list_contains,MKB_L)
 
