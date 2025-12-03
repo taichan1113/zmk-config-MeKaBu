@@ -1,9 +1,9 @@
 ---
 include:
-  - board: seeeduino_xiao_ble
-    shield: Peripheral MKB_L TB_P rgbled_adapter nice_oled
-    snippet: zmk-usb-logging studio-rpc-usb-uart
-    artifact-name: MKB_L_TB_Peripheral
+  # - board: seeeduino_xiao_ble
+  #   shield: Peripheral MKB_L TB_P rgbled_adapter nice_oled
+  #   snippet: zmk-usb-logging studio-rpc-usb-uart
+  #   artifact-name: MKB_L_TB_Peripheral
 
   - board: seeeduino_xiao_ble
     shield: Central MKB_R TB_C rgbled_adapter nice_oled
