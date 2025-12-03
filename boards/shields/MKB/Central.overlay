@@ -1,5 +1,5 @@
-#include "Listners.dtsi"
+// #include "Listners.dtsi"
   
-&listner_peripheral {
-  status = "okay";
-};
+// &listner_peripheral {
+//   status = "okay";
+// };
