@@ -38,23 +38,23 @@ layers:
   - SLASH
   - LGUI
   - ESC
-  - LGUI
-  - LALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: SPACE, h: Sym}
   - {t: BSPC, h: Nav/Num}
   - LALT
   - {t: RET, h: LSHFT}
-  - {t: Sym, h: toggle}
-  - '&cpi_cyc(1)'
   - {t: Mouse, h: toggle}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - '&cpi_cyc(1)'
+  - {t: Sym, h: toggle}
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(120)'
+  - PSCRN
+  - '&msc MOVE_Y(-120)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
@@ -86,7 +86,7 @@ layers:
   - Sft+2
   - LSHIFT
   - Sft+INT3
-  - {t: ▽, type: trans}
+  - Sft+EQUAL
   - {t: ▽, type: trans}
   - EQUAL
   - Sft+6
@@ -106,14 +106,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(120)'
+  - PSCRN
+  - '&msc MOVE_Y(-120)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
@@ -165,14 +165,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(1200)'
+  - PSCRN
+  - '&msc MOVE_Y(-1200)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
@@ -224,14 +224,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(120)'
+  - PSCRN
+  - '&msc MOVE_Y(-120)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
@@ -283,14 +283,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(120)'
+  - PSCRN
+  - '&msc MOVE_Y(-120)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
@@ -342,14 +342,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&msc SCRL_UP'
-  - {t: ▽, type: trans}
-  - '&msc SCRL_DOWN'
-  - '&mkp MB5'
+  - {t: '&mkp MB4', s: '0'}
+  - '&msc MOVE_Y(120)'
+  - PSCRN
+  - '&msc MOVE_Y(-120)'
+  - {t: '&mkp MB5', s: '0'}
   - LEFT
   - UP
-  - {t: ▽, type: trans}
+  - MUTE
   - DOWN
   - RIGHT
   - HOME
