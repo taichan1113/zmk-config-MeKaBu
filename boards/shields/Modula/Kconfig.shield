@@ -1,0 +1,5 @@
+config SHIELD_MODULA_L
+    def_bool $(shields_list_contains,Modula_left)
+
+config SHIELD_MODULA_R
+    def_bool $(shields_list_contains,MKB_R)

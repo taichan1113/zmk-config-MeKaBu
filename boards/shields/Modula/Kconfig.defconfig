@@ -1,0 +1,10 @@
+if SHIELD_MODULA_L || SHIELD_MODULA_R
+    config ZMK_KEYBOARD_NAME
+        default "Modula"
+    
+    config NFCT_PINS_AS_GPIOS
+        default y
+
+    config ZMK_SPLIT
+        default y
+endif 

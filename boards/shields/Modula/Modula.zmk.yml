@@ -1,8 +1,12 @@
 file_format: "1"
-id: MeKaBu
-name: MeKaBu
+id: modula
+name: Modula
 type: shield
 url: https://github.com/Modulable-Keyboard-Developer/zmk-config-MKB
 requires: [seeeduino_xiao_ble]
+siblings:
+  - Modula_left
+  - Modula_right
 features:
   - keys
+  - pointer

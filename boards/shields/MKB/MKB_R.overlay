@@ -1,6 +1,0 @@
-#include "KB_pinctrl.dtsi"
-#include "KB_Base.dtsi"
-
-&default_transform {
-    col-offset = <6>;
-};

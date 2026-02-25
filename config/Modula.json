@@ -1,8 +1,8 @@
 {
-  "id": "MeKaBu",
-  "name": "MeKaBu",
+  "id": "modula",
+  "name": "Modula",
   "layouts": {
-    "layout_MKB": {
+    "layout_Modula": {
       "layout": [
         { "x":     0, "y":    0, "row": 0, "col":  0 },
         { "x":     1, "y":    0, "row": 0, "col":  1 },
