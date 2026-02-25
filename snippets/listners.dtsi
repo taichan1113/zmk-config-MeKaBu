@@ -16,8 +16,8 @@
     
   listner_peripheral: listner_peripheral {
     compatible = "zmk,input-listener";
-    device = <&split_peripheral>;
     status = "disabled";
+    device = <&split_peripheral>;
   };
     
 };

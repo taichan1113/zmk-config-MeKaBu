@@ -1,55 +1,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-// #include "../pinctrl_spi.dtsi"
-// #include "../listners.dtsi"
-
-
-/{
-//   split_inputs {
-//     #address-cells = <1>;
-//     #size-cells = <0>;
-    
-//     split_peripheral: split_peripheral@0 {
-//       compatible = "zmk,input-split";
-//       reg = <0>;
-//     };
-//   };
-    
-  listner_central: listner_central {
-    compatible = "zmk,input-listener";
-    // status = "disabled";
-    status = "okay";
-    device = <&trackball>;
-  };
-    
-//   listner_peripheral: listner_peripheral {
-//     compatible = "zmk,input-listener";
-//     device = <&split_peripheral>;
-//     // status = "disabled";
-//     status = "okay";
-//     device = <&split_peripheral>;
-//   };
-    
-};
-
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
-        };
-    };
-};
+#include "../pinctrl_spi.dtsi"
+#include "../listners.dtsi"
 
 &spi0 {
     status = "okay";
@@ -73,19 +25,19 @@
     };
 };
 
-// &listner_central{
-//     status = "okay";
-//     device = <&trackball>;
-//     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+&listner_central{
+    status = "okay";
+    device = <&trackball>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
 
-//     // scroller {
-//     //     layers = <1>;
-//     //     input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-//     //     , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
-//     //     , <&zip_xy_to_scroll_mapper>
-//     //     ;
-//     // };
-// };
+    scroller {
+        layers = <1>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+        , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+        , <&zip_xy_to_scroll_mapper>
+        ;
+    };
+};
 
 &cpi_cyc{
     status = "okay";
