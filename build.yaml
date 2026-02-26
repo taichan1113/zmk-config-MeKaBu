@@ -8,13 +8,8 @@ include:
 
   - board: xiao_ble
     shield: Modula_left rgbled_adapter
-    snippet: studio-rpc-usb-uart peripheral trackball
-    artifact-name: modula_left_peripheral_trackball
-
-  # - board: seeeduino_xiao_ble
-  #   shield: Peripheral MKB_L TB_P rgbled_adapter nice_oled
-  #   snippet: zmk-usb-logging studio-rpc-usb-uart
-  #   artifact-name: MKB_L_TB_Peripheral
+    snippet: studio-rpc-usb-uart peripheral trackball encoder
+    artifact-name: modula_left_peripheral_trackball_encoder
 
   # - board: seeeduino_xiao_ble
   #   shield: Central MKB_R TB_C rgbled_adapter nice_oled

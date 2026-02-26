@@ -1,0 +1,16 @@
+/ {
+    encoder0: encoder0 {
+        compatible = "alps,ec11";
+        status = "okay"; 
+        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <24>;
+    };
+};
+
+&sensors {
+    sensors = <&encoder0>;
+    config0 {
+        triggers-per-rotation = <24>;
+    };
+};

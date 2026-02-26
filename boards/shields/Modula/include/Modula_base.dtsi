@@ -93,19 +93,8 @@
   };
 
    // Encoders
-   left_encoder: left-encoder {
-      compatible = "alps,ec11";
-      status = "disabled";
-   };
-
-   right_encoder: right-encoder {
-      compatible = "alps,ec11";
-      status = "disabled";
-   };
-
    sensors: sensors {
       compatible = "zmk,keymap-sensors";
-      sensors = <&left_encoder &right_encoder>;
    };
 
   // Cyclic CPI
