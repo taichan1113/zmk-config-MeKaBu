@@ -7,8 +7,8 @@ include:
     artifact-name: modula_right_central_trackball
 
   - board: xiao_ble
-    shield: Modula_left rgbled_adapter
-    snippet: studio-rpc-usb-uart peripheral trackball encoder
+    shield: Modula_left encoder_left rgbled_adapter
+    snippet: studio-rpc-usb-uart peripheral trackball
     artifact-name: modula_left_peripheral_trackball_encoder
 
   # - board: seeeduino_xiao_ble
