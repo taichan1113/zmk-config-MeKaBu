@@ -1,0 +1,4 @@
+name: central
+append:
+  EXTRA_DTC_OVERLAY_FILE: central.overlay
+  EXTRA_CONF_FILE: central.conf

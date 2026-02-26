@@ -1,4 +1,4 @@
-name: trackball-central
+name: trackball
 append:
   EXTRA_DTC_OVERLAY_FILE: trackball.overlay
   EXTRA_CONF_FILE: trackball.conf

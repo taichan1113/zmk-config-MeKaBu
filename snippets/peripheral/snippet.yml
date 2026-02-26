@@ -1,0 +1,4 @@
+name: peripheral
+append:
+  EXTRA_DTC_OVERLAY_FILE: peripheral.overlay
+  # EXTRA_CONF_FILE: peripheral.conf

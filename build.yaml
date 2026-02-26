@@ -3,9 +3,13 @@ include:
 
   - board: xiao_ble
     shield: Modula_right rgbled_adapter # Central MKB_R TB_C rgbled_adapter
-    snippet: studio-rpc-usb-uart trackball-central
+    snippet: studio-rpc-usb-uart central trackball
     artifact-name: modula_right_central_trackball
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+
+  - board: xiao_ble
+    shield: Modula_left rgbled_adapter
+    snippet: studio-rpc-usb-uart peripheral trackball
+    artifact-name: modula_left_peripheral_trackball
 
   # - board: seeeduino_xiao_ble
   #   shield: Peripheral MKB_L TB_P rgbled_adapter nice_oled
