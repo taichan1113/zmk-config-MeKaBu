@@ -1,15 +1,28 @@
-/{
-  pointer: listner_central {
-    compatible = "zmk,input-listener";
-    status = "disabled";
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+#include "../listners.dtsi"
 
-    scroller {
-        layers = <1>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-        , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
-        , <&zip_xy_to_scroll_mapper>
-        ;
-    };
+pointer: &listner_central{
+  input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+  scroller {
+    layers = <1>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+    , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+    , <&zip_xy_to_scroll_mapper>
+    ;
   };
 };
+
+// /{
+//   pointer: listner_central {
+//     compatible = "zmk,input-listener";
+//     status = "disabled";
+//     input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+
+//     scroller {
+//         layers = <1>;
+//         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+//         , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+//         , <&zip_xy_to_scroll_mapper>
+//         ;
+//     };
+//   };
+// };

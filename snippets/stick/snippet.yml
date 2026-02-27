@@ -1,0 +1,4 @@
+name: stick
+append:
+  EXTRA_DTC_OVERLAY_FILE: stick.overlay
+  EXTRA_CONF_FILE: stick.conf
