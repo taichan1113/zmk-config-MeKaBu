@@ -29,7 +29,7 @@ manifest:
     - name: zmk-rgbled-widget
       path: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3-branch
     - name: zmk-pmw3610-driver
       path: zmk-pmw3610-driver
       remote: badjeff

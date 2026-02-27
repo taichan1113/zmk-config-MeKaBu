@@ -10,3 +10,5 @@ result
 X_*
 /firmware/
 *.zip
+
+/archive/
