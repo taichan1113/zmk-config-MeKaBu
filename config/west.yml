@@ -33,9 +33,9 @@ manifest:
     - name: zmk-behavior-sensor-attr-cycle
       remote: badjeff
       revision: main
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
+    # - name: zmk-rgbled-widget
+    #   remote: caksoylar
+    #   revision: main
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
       revision: main

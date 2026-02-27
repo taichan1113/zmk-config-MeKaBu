@@ -11,6 +11,10 @@ pointer: &listner_central{
   };
 };
 
+&listner_peripheral {
+  status = "okay";
+};
+
 // /{
 //   pointer: listner_central {
 //     compatible = "zmk,input-listener";
