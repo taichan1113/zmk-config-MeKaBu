@@ -236,7 +236,7 @@
 &lth FCN TAB    &plt FCN Q    &kp W         &kp E     &kp R             &kp T                   &kp Y       &kp U           &kp I       &kp O       &kp P       &minus
 &mth LCTRL RET  &kp A         &kp S         &kp D     &kp F             &kp G                   &kp H       &kp J           &kp K       &kp L       &semi       &sqt
 &mth LSHIFT ESC &kp Z         &kp X         &kp C     &kp V             &kp B                   &kp N       &kp M           &kp COMMA   &kp DOT     &kp SLASH   &kp LGUI
-&kp  ESC        &trans        &trans        &lth SYMBOL SPACE &lth NAVNUM BSPC                  &kp LALT    &mt LSHFT RET               &tog MOUSE  &cpi_cyc(1) &tog SYMBOL
+&kp  ESC        &trans        &trans        &lth SYMBOL SPACE &lth NAVNUM BSPC                  &kp LALT    &mt LSHFT RET               &tog MOUSE  &trans &tog SYMBOL
 &mb4_alt_gui_n  &msc SCUP_S &kp PSCRN  &msc SCDN_S   &mb5_alt_gui_p            &kp LEFT    &kp UP          &kp C_MUTE  &kp DOWN   &kp RIGHT
 &kp HOME &kp END
 			>;

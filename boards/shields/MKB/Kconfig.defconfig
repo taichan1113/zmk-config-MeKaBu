@@ -1,6 +1,6 @@
-if SHIELD_CENTRAL
+if SHIELD_MKB_R
     config ZMK_KEYBOARD_NAME
-        default "MeKaBu"
+        default "MeKaBu_R"
 
     config ZMK_SPLIT
         default y
@@ -12,7 +12,10 @@ if SHIELD_CENTRAL
         default 1
 endif
 
-if SHIELD_MKB_L || SHIELD_MKB_R
+if SHIELD_MKB_L
+    config ZMK_KEYBOARD_NAME
+        default "MeKaBu_L"
+
     config ZMK_SPLIT
         default y
 endif 

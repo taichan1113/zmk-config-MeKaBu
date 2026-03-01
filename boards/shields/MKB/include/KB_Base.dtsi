@@ -18,7 +18,6 @@
 
   chosen {
     zmk,physical-layout = &layout_MKB;
-    zephyr,display = &oled;
   };
    
   position_map {
@@ -161,6 +160,10 @@
    left_encoder: left-encoder {
       compatible = "alps,ec11";
       status = "disabled";
+      a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      steps = <24>;
+      // status = "okay"; 
    };
 
    right_encoder: right-encoder {
@@ -171,48 +174,51 @@
    sensors: sensors {
       compatible = "zmk,keymap-sensors";
       sensors = <&left_encoder &right_encoder>;
+      triggers-per-rotation = <24>;
    };
 
   // Cyclic CPI
   // Behaviour to cycle through DPI values on a keypress
-  cpi_cyc: sensor_cpi_cycle {
-      compatible = "zmk,behavior-sensor-attr-cycle";
-      status = "disabled";
-      #binding-cells = <1>;
-      values = < 800 1600 3200 400>;
-      attr = <0>;
-      display-name = "DPI cycle";
-  };
+  // cpi_cyc: sensor_cpi_cycle {
+  //     compatible = "zmk,behavior-sensor-attr-cycle";
+  //     status = "disabled";
+  //     #binding-cells = <1>;
+  //     values = < 800 1600 3200 400>;
+  //     attr = <0>;
+  //     display-name = "DPI cycle";
+  // };
   
 };
 
 
+
+
 // OLED I2C settings
-&i2c1 {
-  status = "okay";
-  compatible = "nordic,nrf-twi";
-  pinctrl-0 = <&i2c1_default>;
-  pinctrl-1 = <&i2c1_sleep>;
-  pinctrl-names = "default", "sleep";
-  clock-frequency = <100000>; 
+// &i2c1 {
+//   status = "okay";
+//   compatible = "nordic,nrf-twi";
+//   pinctrl-0 = <&i2c1_default>;
+//   pinctrl-1 = <&i2c1_sleep>;
+//   pinctrl-names = "default", "sleep";
+//   clock-frequency = <100000>; 
 
-  oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    segment-remap;
-    com-invdir;
-    com-sequential;
-    inversion-on;
-    prechargep = <0x22>;
-  };
-};
+//   oled: ssd1306@3c {
+//     compatible = "solomon,ssd1306fb";
+//     reg = <0x3c>;
+//     width = <128>;
+//     height = <32>;
+//     segment-offset = <0>;
+//     page-offset = <0>;
+//     display-offset = <0>;
+//     multiplex-ratio = <31>;
+//     segment-remap;
+//     com-invdir;
+//     com-sequential;
+//     inversion-on;
+//     prechargep = <0x22>;
+//   };
+// };
 
-zephyr_udc0: &usbd {
-    status = "okay";
-};
+// zephyr_udc0: &usbd {
+//     status = "okay";
+// };

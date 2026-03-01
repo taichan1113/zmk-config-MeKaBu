@@ -6,8 +6,8 @@ include:
   #   artifact-name: MKB_L_TB_Peripheral
 
   - board: xiao_ble
-    shield: Central MKB_R TB_C rgbled_adapter
-    snippet: studio-rpc-usb-uart zmk-usb-logging
+    shield: MKB_R rgbled_adapter
+    snippet: studio-rpc-usb-uart
     artifact-name: MKB_R_TB_Central
 
   # - board: seeeduino_xiao_ble
@@ -21,9 +21,9 @@ include:
   #   artifact-name: MKB_R_TB_Peripheral
 
   - board: xiao_ble
-    shield: Peripheral MKB_L ENC_L AS_P rgbled_adapter
+    shield: MKB_L rgbled_adapter
     snippet: studio-rpc-usb-uart
-    artifact-name: MKB_L_ENC_AS_Peripheral
+    artifact-name: MKB_L_ENC_Peripheral
 
 
   # ----------------------------------------------------------------------------

@@ -1,2 +1,5 @@
-#include "KB_pinctrl.dtsi"
 #include "KB_Base.dtsi"
+
+&left_encoder {
+    status = "okay";
+};

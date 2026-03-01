@@ -6,42 +6,50 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: te9no
-      url-base: https://github.com/te9no
+    - name: ssbb
+      url-base: https://github.com/ssbb
     - name: kot149
       url-base: https://github.com/kot149
-    - name: BP
-      url-base: https://github.com/taichan1113
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
-    - name: oleksandrmaslov
-      url-base: https://github.com/oleksandrmaslov
-    - name: george-norton
-      url-base: https://github.com/george-norton
+    - name: 4mplelab
+      url-base: https://github.com/4mplelab
+    # - name: BP
+    #   url-base: https://github.com/taichan1113
+    # - name: mctechnology17
+    #   url-base: https://github.com/mctechnology17
+    # - name: petejohanson
+    #   url-base: https://github.com/petejohanson
+    # - name: oleksandrmaslov
+    #   url-base: https://github.com/oleksandrmaslov
+    # - name: george-norton
+    #   url-base: https://github.com/george-norton
   projects:
     - name: zmk
       remote: zmkfirmware
       # remote: BP
       revision: main
       import: app/west.yml
+
     - name: zmk-rgbled-widget
-      path: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+
     - name: zmk-pmw3610-driver
-      path: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.4
+
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+
     - name: zmk-analog-input-driver
       path: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    - name: zmk-nice-oled
-      path: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
+
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
+
     # - name: zmk-layout-shift
     #   path: zmk-layout-shift
     #   remote: kot149
@@ -58,14 +66,14 @@ manifest:
     #   path: zmk-driver-MLX90393
     #   remote: te9no
     #   revision: main
-    - name: zmk-pointing-acceleration
-      path: zmk-pointing-acceleration
-      remote: oleksandrmaslov
-      revision: main
-    - name: zmk-behavior-sensor-attr-cycle
-      path: zmk-behavior-sensor-attr-cycle
-      remote: badjeff
-      revision: main
+    # - name: zmk-pointing-acceleration
+    #   path: zmk-pointing-acceleration
+    #   remote: oleksandrmaslov
+    #   revision: main
+    # - name: zmk-behavior-sensor-attr-cycle
+    #   path: zmk-behavior-sensor-attr-cycle
+    #   remote: badjeff
+    #   revision: main
   self:
     path: config
     
