@@ -3,6 +3,11 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <behaviors/rgbled_widget.dtsi>
 
+
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 / {
 
   aliases {
