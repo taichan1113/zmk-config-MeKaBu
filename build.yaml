@@ -7,7 +7,7 @@ include:
 
   - board: xiao_ble
     shield: MKB_R
-    snippet: studio-rpc-usb-uart
+    snippet: trackball studio-rpc-usb-uart
     # artifact-name: MKB_R_TB_Central
 
   - board: xiao_ble
