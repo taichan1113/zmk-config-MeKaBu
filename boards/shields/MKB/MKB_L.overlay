@@ -2,7 +2,7 @@
 
 &left_encoder {
   status = "okay";
-  a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-  b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-  steps = <30>;
+  a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
+  b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+  steps = <24>;
 };
