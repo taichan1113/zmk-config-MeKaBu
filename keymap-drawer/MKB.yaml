@@ -45,7 +45,7 @@ layers:
   - LALT
   - {t: RET, h: LSHFT}
   - {t: Mouse, h: toggle}
-  - '&cpi_cyc(1)'
+  - {t: ▽, type: trans}
   - {t: Sym, h: toggle}
   - {t: '&mkp MB4', s: '0'}
   - '&msc MOVE_Y(120)'
