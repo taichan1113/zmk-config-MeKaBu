@@ -6,12 +6,12 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: ssbb
-      url-base: https://github.com/ssbb
-    - name: kot149
-      url-base: https://github.com/kot149
-    - name: 4mplelab
-      url-base: https://github.com/4mplelab
+    # - name: ssbb
+    #   url-base: https://github.com/ssbb
+    # - name: kot149
+    #   url-base: https://github.com/kot149
+    # - name: 4mplelab
+    #   url-base: https://github.com/4mplelab
     # - name: BP
     #   url-base: https://github.com/taichan1113
     # - name: mctechnology17
@@ -26,12 +26,13 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       # remote: BP
-      revision: main
+      # revision: main
+      revision: 354cff9
       import: app/west.yml
 
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
+    # - name: zmk-rgbled-widget
+    #   remote: caksoylar
+    #   revision: main
 
     - name: zmk-pmw3610-driver
       remote: badjeff
@@ -41,14 +42,14 @@ manifest:
       remote: badjeff
       revision: main
 
-    - name: zmk-analog-input-driver
-      path: zmk-analog-input-driver
-      remote: badjeff
-      revision: main
+    # - name: zmk-analog-input-driver
+    #   path: zmk-analog-input-driver
+    #   remote: badjeff
+    #   revision: main
 
-    - name: zmk-listeners
-      remote: ssbb
-      revision: v1
+    # - name: zmk-listeners
+    #   remote: ssbb
+    #   revision: v1
 
     # - name: zmk-layout-shift
     #   path: zmk-layout-shift

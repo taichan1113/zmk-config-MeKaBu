@@ -6,14 +6,14 @@ include:
   #   artifact-name: MKB_L_TB_Peripheral
 
   - board: xiao_ble
-    shield: MKB_R rgbled_adapter
+    shield: MKB_R
     snippet: studio-rpc-usb-uart
-    artifact-name: MKB_R_TB_Central
+    # artifact-name: MKB_R_TB_Central
 
   - board: xiao_ble
-    shield: MKB_L rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: MKB_L_ENC_Peripheral
+    shield: MKB_L
+    # snippet: studio-rpc-usb-uart
+    # artifact-name: MKB_L_ENC_Peripheral
 
   # - board: seeeduino_xiao_ble
   #   shield: Central MKB_L ENC_L rgbled_adapter nice_oled
