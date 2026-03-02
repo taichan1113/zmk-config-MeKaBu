@@ -28,6 +28,7 @@ manifest:
       # remote: BP
       # revision: main
       revision: 354cff9
+      # revision: 2d543769e738b34e92b4cecbb69a5d0045907296
       import: app/west.yml
 
     # - name: zmk-rgbled-widget

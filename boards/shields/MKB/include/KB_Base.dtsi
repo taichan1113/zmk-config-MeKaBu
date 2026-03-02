@@ -3,31 +3,26 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 // #include <behaviors/rgbled_widget.dtsi>
 
-
-&uicr {
-    nfct-pins-as-gpios;
-};
-
 / {
 
-  // aliases {
-  //   led-red = &led0;
-  //   led-green = &led1;
-  //   led-blue = &led2;
-  // };
+  aliases {
+    led-red = &led0;
+    led-green = &led1;
+    led-blue = &led2;
+  };
 
   chosen {
     zmk,physical-layout = &layout_MKB;
     zmk,kscan = &kscan0;
   };
    
-  // position_map {
-  //   compatible = "zmk,physical-layout-position-map";
-  //   layout_MKB {
-  //     physical-layout = <&layout_MKB>;
-  //     positions = <>;
-  //   };
-  // };
+  position_map {
+    compatible = "zmk,physical-layout-position-map";
+    layout_MKB {
+      physical-layout = <&layout_MKB>;
+      positions = <>;
+    };
+  };
 
   layout_MKB: layout_MKB {
     compatible = "zmk,physical-layout";
@@ -143,39 +138,35 @@
   };
 
   // LEDs
-  // leds {
-  //   compatible = "gpio-leds";
-  //   status = "okay";
-  //   led0: led_0 {
-  //     gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.26
-  //   };
-  //   led1: led_1 {
-  //     gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.30
-  //   };
-  //   led2: led_2 {
-  //     gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
-  //   };
-  // };
+  leds {
+    compatible = "gpio-leds";
+    status = "okay";
+    led0: led_0 {
+      gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.26
+    };
+    led1: led_1 {
+      gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.30
+    };
+    led2: led_2 {
+      gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
+    };
+  };
 
    // Encoders
    left_encoder: left-encoder {
       compatible = "alps,ec11";
       status = "disabled";
-      a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-      b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-      steps = <24>;
-      // status = "okay"; 
    };
 
-  //  right_encoder: right-encoder {
-  //     compatible = "alps,ec11";
-  //     status = "disabled";
-  //  };
+   right_encoder: right-encoder {
+      compatible = "alps,ec11";
+      status = "disabled";
+   };
 
    sensors: sensors {
       compatible = "zmk,keymap-sensors";
-      sensors = <&left_encoder>;
-      triggers-per-rotation = <24>;
+      sensors = <&left_encoder &right_encoder>;
+      triggers-per-rotation = <12>;
    };
 
   // Cyclic CPI
@@ -191,8 +182,11 @@
   
 };
 
+&uicr {
+    nfct-pins-as-gpios;
+};
 
-
+&xiao_serial { status = "disabled"; };
 
 // OLED I2C settings
 // &i2c1 {
@@ -218,8 +212,4 @@
 //     inversion-on;
 //     prechargep = <0x22>;
 //   };
-// };
-
-// zephyr_udc0: &usbd {
-//     status = "okay";
 // };
