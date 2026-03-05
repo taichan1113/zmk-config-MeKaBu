@@ -1,8 +1,27 @@
 #include "KB_Base.dtsi"
 
-&left_encoder {
-  status = "okay";
-  a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
-  b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
-  steps = <24>;
-};
+// &left_encoder {
+//   status = "okay";
+//   a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//   b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//   steps = <96>;
+// };
+
+// &left_encoder {
+//   status = "okay";
+//   a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
+//   b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+//   steps = <60>;
+// };
+
+// /delete-node/ &kscan2;
+
+// / {
+//     kscan2: kscan2 {
+//         compatible = "zmk,kscan-gpio-direct";
+//         // wakeup-source;
+//         input-gpios
+//             = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+//             ;
+//     };
+// };

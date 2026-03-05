@@ -1,0 +1,4 @@
+name: trackball2
+append:
+  EXTRA_DTC_OVERLAY_FILE: trackball2.overlay
+  EXTRA_CONF_FILE: trackball2.conf

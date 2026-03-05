@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-// #include <behaviors/rgbled_widget.dtsi>
+#include <behaviors/rgbled_widget.dtsi>
 
 / {
 

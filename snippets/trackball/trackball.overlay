@@ -1,5 +1,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
 #include "../pinctrl_spi.dtsi"
 #include "../listners.dtsi"
 
@@ -29,7 +30,10 @@
     status = "okay";
     device = <&trackball>;
     
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+    input-processors
+        = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+        , <&zip_report_rate_limit 12>
+        ;
     scroller {
         layers = <1>;
         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
@@ -37,6 +41,17 @@
         , <&zip_xy_to_scroll_mapper>
         ;
     };
+};
+
+&listner_peripheral{
+    status = "okay";
+    device = <&split_peripheral>;
+    input-processors
+        = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+		, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+		// , <&zip_xy_to_scroll_mapper>
+        , <&zip_report_rate_limit 12>
+		;
 };
 
 // &pointer {

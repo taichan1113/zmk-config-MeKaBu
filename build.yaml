@@ -6,12 +6,13 @@ include:
   #   artifact-name: MKB_L_TB_Peripheral
 
   - board: xiao_ble
-    shield: MKB_R
+    shield: MKB_R rgbled_adapter
     snippet: trackball studio-rpc-usb-uart
     # artifact-name: MKB_R_TB_Central
 
   - board: xiao_ble
-    shield: MKB_L
+    shield: MKB_L rgbled_adapter
+    snippet: trackball2
     # snippet: studio-rpc-usb-uart
     # artifact-name: MKB_L_ENC_Peripheral
 

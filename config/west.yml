@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: MeowCatpawkittie
+      url-base: https://github.com/MeowCatpawkittie
     # - name: ssbb
     #   url-base: https://github.com/ssbb
     # - name: kot149
@@ -31,9 +33,9 @@ manifest:
       # revision: 2d543769e738b34e92b4cecbb69a5d0045907296
       import: app/west.yml
 
-    # - name: zmk-rgbled-widget
-    #   remote: caksoylar
-    #   revision: main
+    - name: zmk-rgbled-widget
+      remote: MeowCatpawkittie
+      revision: main
 
     - name: zmk-pmw3610-driver
       remote: badjeff

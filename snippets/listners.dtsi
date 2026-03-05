@@ -5,7 +5,6 @@
     
     split_peripheral: split_peripheral@0 {
       compatible = "zmk,input-split";
-      status = "disabled";
       reg = <0>;
     };
   };
