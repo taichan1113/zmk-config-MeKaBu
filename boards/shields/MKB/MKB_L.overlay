@@ -1,11 +1,11 @@
 #include "KB_Base.dtsi"
 
-// &left_encoder {
-//   status = "okay";
-//   a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//   b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//   steps = <96>;
-// };
+&left_encoder {
+    status = "okay"; 
+    a-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH)>;
+    b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH)>;
+    steps = <60>;
+};
 
 // &left_encoder {
 //   status = "okay";

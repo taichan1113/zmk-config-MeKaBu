@@ -45,6 +45,10 @@ manifest:
       remote: badjeff
       revision: main
 
+    - name: zmk-input-processor-xyz
+      remote: badjeff
+      revision: main
+
     # - name: zmk-analog-input-driver
     #   path: zmk-analog-input-driver
     #   remote: badjeff

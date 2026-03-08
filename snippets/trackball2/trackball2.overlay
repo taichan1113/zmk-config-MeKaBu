@@ -1,5 +1,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <input/processors/xyz.dtsi>
 #include "../pinctrl_i2c.dtsi"
 #include "../listners.dtsi"
 
@@ -7,8 +8,8 @@
 // &gpio1 {
 //     sensor_wakeup {
 //         gpio-hog;
-//         gpios = <12 GPIO_ACTIVE_HIGH>;
-//         output-high;
+//         gpios = <12 GPIO_ACTIVE_LOW>;
+//         output-low;
 //     };
 // };
 
@@ -18,14 +19,17 @@
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
 	pinctrl-names = "default", "sleep";
+	clock-frequency = <I2C_BITRATE_FAST>;
+    #address-cells = <1>;
+    #size-cells = <0>;
 
-	trackball2: trackball2@75 {
+	trackball2: trackball2@79 {
 		status = "okay";
 		compatible = "pixart,pat912x";
-		reg = <0x75>; // HIGH:0x73, LOW:0x75, NC:0x79
+		reg = <0x79>; // HIGH:0x73, LOW:0x75, NC:0x79
 		motion-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-		res-x-cpi = <100>;
-		res-y-cpi = <100>;
+		res-x-cpi = <600>;
+		res-y-cpi = <600>;
 		zephyr,axis-x = <INPUT_REL_X>;
 		zephyr,axis-y = <INPUT_REL_Y>;
 		sleep1-enable;
@@ -35,6 +39,7 @@
 
 &split_peripheral {
     device = <&trackball2>;
+	input-processors = <&zip_xyz>;
     // input-processors 
 	// 	= <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
 	// 	, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
