@@ -48,7 +48,7 @@
     device = <&split_peripheral>;
     input-processors
         = <&zip_zxy>
-        // , <&zip_report_rate_limit 14>
+        , <&zip_report_rate_limit 8>
 		, <&zip_xy_to_scroll_mapper>
 		;
 };
