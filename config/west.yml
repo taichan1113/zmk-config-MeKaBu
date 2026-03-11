@@ -14,8 +14,8 @@ manifest:
     #   url-base: https://github.com/kot149
     # - name: 4mplelab
     #   url-base: https://github.com/4mplelab
-    # - name: BP
-    #   url-base: https://github.com/taichan1113
+    - name: BP
+      url-base: https://github.com/taichan1113
     # - name: mctechnology17
     #   url-base: https://github.com/mctechnology17
     # - name: petejohanson
@@ -26,9 +26,11 @@ manifest:
     #   url-base: https://github.com/george-norton
   projects:
     - name: zmk
-      remote: zmkfirmware
-      # remote: BP <- analog input modification
-      revision: main
+      # remote: zmkfirmware
+      # revision: main
+      remote: BP # <- analog input modification / deadlock fix
+      # revision: deadlockfix
+      revision: ensure-eof
       import: app/west.yml
 
     - name: zmk-rgbled-widget
@@ -37,7 +39,8 @@ manifest:
 
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: zmk-0.4
+      # revision: zmk-0.4
+      revision: main
 
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
