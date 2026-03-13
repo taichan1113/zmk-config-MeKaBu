@@ -27,10 +27,11 @@ manifest:
   projects:
     - name: zmk
       # remote: zmkfirmware
+      # revision: 354cff9
       # revision: main
       remote: BP # <- analog input modification / deadlock fix
-      # revision: deadlockfix
-      revision: ensure-eof
+      revision: deadlockfix
+      # revision: ensure-eof
       import: app/west.yml
 
     - name: zmk-rgbled-widget
