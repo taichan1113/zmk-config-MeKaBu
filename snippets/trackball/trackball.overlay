@@ -5,11 +5,11 @@
 #include "../pinctrl_spi.dtsi"
 #include "../listners.dtsi"
 
-&spi2 {
+&spi0 {
     status = "okay";
     cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>;
-    pinctrl-0 = <&spi2_default>;
-    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
@@ -17,7 +17,7 @@
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
-        spi-max-frequency = <2000000>;
+        spi-max-frequency = <1500000>;
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <800>;
         evt-type = <INPUT_EV_REL>;
@@ -51,7 +51,7 @@
         = <&zip_zxy>
         , <&zip_report_rate_limit 8>
 		, <&zip_xy_to_scroll_mapper>
-        // , <&zip_scroll_scaler 1 2>
+        , <&zip_scroll_scaler 3 1>
 		;
 };
 
