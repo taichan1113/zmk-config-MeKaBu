@@ -48,7 +48,7 @@
 
 &listner_peripheral{
     status = "okay";
-    device = <&split_peripheral>;
+    // device = <&split_peripheral>;
     input-processors
         = <&zip_zxy>
         , <&zip_report_rate_limit 8>

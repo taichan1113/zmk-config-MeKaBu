@@ -41,7 +41,7 @@
 };
 
 &split_peripheral {
-    device = <&trackball2>;
+  device = <&trackball2>;
 	input-processors = <&zip_report_rate_limit 8>, <&zip_xyz>;
     // input-processors 
 	// 	= <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
