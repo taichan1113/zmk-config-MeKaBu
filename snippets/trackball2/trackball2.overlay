@@ -1,7 +1,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
-#include <input/processors/xyz.dtsi>
+// #include <input/processors/xyz.dtsi>
 #include "../pinctrl_i2c.dtsi"
 #include "../listners.dtsi"
 
@@ -26,11 +26,11 @@
 
 	trackball2: trackball2@79 {
 		status = "okay";
-		compatible = "pixart,pat912x";
+		compatible = "pixart,pat9125";
 		reg = <0x79>; // HIGH:0x73, LOW:0x75, NC:0x79
 		motion-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-		res-x-cpi = <100>;
-		res-y-cpi = <100>;
+		res-x-cpi = <300>;
+		res-y-cpi = <300>;
 		zephyr,axis-x = <INPUT_REL_X>;
 		zephyr,axis-y = <INPUT_REL_Y>;
 		// invert-x;
@@ -42,7 +42,7 @@
 
 &split_peripheral {
     device = <&trackball2>;
-	input-processors = <&zip_report_rate_limit 8>, <&zip_xyz>;
+	input-processors = <&zip_report_rate_limit 16>;
     // input-processors 
 	// 	= <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
 	// 	, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
