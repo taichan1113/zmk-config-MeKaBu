@@ -1,7 +1,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
-// #include <input/processors/xyz.dtsi>
+#include <input/processors/xyz.dtsi>
 #include "../pinctrl_i2c.dtsi"
 #include "../listners.dtsi"
 
@@ -42,7 +42,9 @@
 
 &split_peripheral {
     device = <&trackball2>;
-	input-processors = <&zip_report_rate_limit 16>;
+	input-processors
+		= <&zip_report_rate_limit 10>
+		, <&zip_xyz>;
     // input-processors 
 	// 	= <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
 	// 	, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
