@@ -1,9 +1,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-#include <input/processors/report_rate_limit.dtsi>
-#include <input/processors/xyz.dtsi>
 #include "../pinctrl_spi.dtsi"
-#include "../listners.dtsi"
 
 &spi0 {
     status = "okay";
@@ -13,7 +10,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball: trackball@0 {
+    trackball: trackball_pmw3610_alt@0 {
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
@@ -28,8 +25,6 @@
 };
 
 &listner_central {
-    status = "okay";
-    device = <&trackball>;
     input-processors
         = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
         // , <&zip_report_rate_limit 8>
@@ -42,17 +37,6 @@
         // , <&zip_report_rate_limit 8>
         ;
     };
-};
-
-&listner_peripheral{
-    status = "okay";
-    device = <&split_peripheral>;
-    input-processors
-        = <&zip_zxy>
-        , <&zip_report_rate_limit 8>
-		, <&zip_xy_to_scroll_mapper>
-        , <&zip_scroll_scaler 3 1>
-		;
 };
 
 // &pointer {

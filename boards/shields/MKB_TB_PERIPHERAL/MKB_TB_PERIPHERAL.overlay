@@ -1,0 +1,6 @@
+#include "../../../snippets/listners.dtsi"
+
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};

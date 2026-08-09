@@ -1,0 +1,4 @@
+name: encoder_ec11
+append:
+  EXTRA_DTC_OVERLAY_FILE: encoder_ec11.overlay
+  EXTRA_CONF_FILE: encoder_ec11.conf
