@@ -12,17 +12,17 @@ include:
     cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
     artifact-name: MKB_L_PAT9125_Peripheral
 
-  - board: seeeduino_xiao_ble
-    shield: MKB_R rgbled_adapter
-    snippet: central trackball_pmw3610_alt
-    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
-    artifact-name: MKB_R_PMW3610_Central
+  # - board: seeeduino_xiao_ble
+  #   shield: MKB_R rgbled_adapter
+  #   snippet: central trackball_pmw3610_alt
+  #   cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+  #   artifact-name: MKB_R_PMW3610_Central
 
-  - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter
-    snippet: peripheral encoder_ec11
-    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
-    artifact-name: MKB_L_ENC_Peripheral
+  # - board: seeeduino_xiao_ble
+  #   shield: MKB_L rgbled_adapter
+  #   snippet: peripheral encoder_ec11
+  #   cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+  #   artifact-name: MKB_L_ENC_Peripheral
 
   # ----------------------------------------------------------------------------
 
