@@ -41,12 +41,11 @@ manifest:
 
     - name: zmk-rgbled-widget  # https://github.com/caksoylar/zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3-branch
+      revision: v0.3
 
-    # - name: zmk-pmw3610-driver
-    #   remote: badjeff
-    #   # revision: zmk-0.4
-    #   revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: zmk-0.3
 
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
@@ -104,4 +103,3 @@ manifest:
     #   revision: main
   self:
     path: config
-    

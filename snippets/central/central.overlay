@@ -1,0 +1,12 @@
+#define MKB_ROLE_CENTRAL 1
+
+#include "../listners.dtsi"
+
+/* Receive pointing events forwarded by a peripheral half. */
+&trackball_split {
+    status = "okay";
+};
+
+&listner_peripheral {
+    status = "okay";
+};

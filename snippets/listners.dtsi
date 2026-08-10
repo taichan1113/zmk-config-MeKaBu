@@ -1,11 +1,17 @@
 /{
+  aliases {
+    trackball-split = &trackball_split;
+    trackball-listener-central = &listner_central;
+  };
+
   split_inputs {
     #address-cells = <1>;
     #size-cells = <0>;
     
-    split_peripheral: split_peripheral@0 {
+    trackball_split: trackball_split@0 {
       compatible = "zmk,input-split";
       reg = <0>;
+      status = "disabled";
     };
   };
     
@@ -17,7 +23,7 @@
   listner_peripheral: listner_peripheral {
     compatible = "zmk,input-listener";
     status = "disabled";
-    device = <&split_peripheral>;
+    device = <&trackball_split>;
   };
     
 };

@@ -1,9 +1,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-#include <input/processors/report_rate_limit.dtsi>
-#include <input/processors/xyz.dtsi>
 #include "../pinctrl_spi.dtsi"
-#include "../listners.dtsi"
 
 &spi0 {
     status = "okay";
@@ -13,9 +10,9 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball: trackball@0 {
+    trackball: trackball_pmw3610@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <1500000>;
         irq-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -28,8 +25,6 @@
 };
 
 &listner_central {
-    status = "okay";
-    device = <&trackball>;
     input-processors
         = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
         // , <&zip_report_rate_limit 8>
@@ -44,16 +39,17 @@
     };
 };
 
-&listner_peripheral{
+#ifdef MKB_ROLE_CENTRAL
+&listner_central {
     status = "okay";
-    device = <&split_peripheral>;
-    input-processors
-        = <&zip_zxy>
-        , <&zip_report_rate_limit 8>
-		, <&zip_xy_to_scroll_mapper>
-        , <&zip_scroll_scaler 3 1>
-		;
+    device = <&trackball>;
 };
+#else
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};
+#endif
 
 // &pointer {
 //     status = "okay";

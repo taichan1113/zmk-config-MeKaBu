@@ -1,0 +1,4 @@
+name: trackball_pmw3610_alt
+append:
+  EXTRA_DTC_OVERLAY_FILE: trackball_pmw3610_alt.overlay
+  EXTRA_CONF_FILE: trackball_pmw3610_alt.conf

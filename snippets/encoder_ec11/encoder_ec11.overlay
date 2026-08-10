@@ -1,0 +1,7 @@
+/* EC11 on the left MeKaBu module: A=P1.15, B=P1.14. */
+&left_encoder {
+    status = "okay";
+    a-gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+    b-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+    steps = <60>;
+};

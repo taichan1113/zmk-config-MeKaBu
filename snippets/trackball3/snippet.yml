@@ -1,4 +1,0 @@
-name: trackball3
-append:
-  EXTRA_DTC_OVERLAY_FILE: trackball3.overlay
-  EXTRA_CONF_FILE: trackball3.conf
