@@ -1,69 +1,72 @@
-﻿# Futhesia Moduora (MeKaBu) - フセシア・モデュオラ（メカブ）
+# MeKaBu ユーザーガイド
 
+MeKaBu は ZMK を使う左右分割キーボードです。トラックボールと EC11 エンコーダは、`build.yaml` の snippet を選ぶことで構成します。この README はファームウェアを選んで書き込む利用者向けの案内です。
+
+## まず選ぶもの
+
+左右それぞれについて、**役割**と**接続するモジュール**を選びます。左右（`MKB_L` / `MKB_R`）と central / peripheral の役割は独立しています。
+
+| 分類 | snippet | 用途 |
+| --- | --- | --- |
+| 役割 | `central` | PC と Bluetooth/USB 接続する側。もう一方からの入力も受け取ります。 |
+| 役割 | `peripheral` | central に接続する側。 |
+| トラックボール | `trackball_paw3222` | PAW3222 モジュール。 |
+| トラックボール | `trackball_pat9125` | PAT9125 モジュール。 |
+| トラックボール | `trackball_pmw3610_alt` | PMW3610-alt モジュール。 |
+| エンコーダ | `encoder_ec11` | 左側 EC11 エンコーダ。 |
+
+同じ半分に取り付けられている物理モジュールに対応する snippet だけを指定してください。ピンを共有するモジュールを同時に指定すると、正常に動作しません。
+
+## `build.yaml` の編集
+
+`build.yaml` の `include` に、左右それぞれ1件ずつ build 定義を書きます。`snippet` は空白区切りで複数指定できます。
+
+左を central + EC11、右を peripheral + PAW3222 とする例です。
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: MKB_L rgbled_adapter
+    snippet: central encoder_ec11
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_L_ENC_Central
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_R rgbled_adapter
+    snippet: peripheral trackball_paw3222
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_R_PAW3222_Peripheral
 ```
-                                                                                         
-                                :-:                                                      
-                               =@@@%=                                                    
-                               .#@@@@%-                                                  
-                                 =@@@@@=         :%%#:                                   
-                    :*#*:         :@@@@@-        *@@@%                                   
-                    +@@@@#.        +@@@@#        %@@@%                                   
-                     =@@@@@-       -@@@@%       +@@@@*                                   
-                      .#@@@@=      -@@@@%     .#@@@@%.                                   
-                        #@@@@.     #@@@@=    =@@@@@%:                                    
-                        :@@@@=    *@@@@*   -%@@@@@*                                      
-                        :@@@@=   *@@@@#   +@@@@@*:   -#%#-                               
-                        =@@@@.  =@@@@#   #@@@@#:    -@@@@%                               
-                        *@@@#   %@@@@.  *@@@@=    .=@@@@@=                               
-                        %@@@*   @@@@*  -@@@@-   :*%@@@@@=                                
-                        #@@@#   #@@@=  #@@@=  .#@@@@@#+.                                 
-                        =@@@@-  -@@@+  %@@*  :@@@@#=.                                    
-         --.             +@@@@:  +@@%  #@@: :@@@#:                .--                    
-       .%*=%*=======:     -%@@@=  *@@- *@@  %@@-      -==========*%+*%.                  
-       :@*-%#++++++*@#.     -#@@#: #@# =@% +@%:     -%%++++++++++#@-+@:                  
-        .==:        .*@+      :+@@= %@:-@*.@%.    .*@=            :==.                   
-           .:         :#%=      .+@+-@*=@=#%.    +@*.            :.                      
-         .%**%=-----:   -%#---:   +@*%%%@%@:  :=%#:   :--------=%**%:                    
-         -@=-@#*****%#:   =***#%+*@@@@@@@@@%+#%*-   -%%********#@--@=                    
-          :++-       +@#:      .+@@@@@@@@@@@*-    :#%=          -++-                     
-                      .*@#*******%@@@@@@@@@@*****#@+                                     
-                        .:::::::::::::::::::::::::.                                      
-                                                                                         
+
+PAT9125 と PAW3222 を使う例です。
+
+```yaml
+snippet: central trackball_pat9125
+# 反対側
+snippet: peripheral trackball_paw3222
 ```
 
-A distributed knowledge-type input device discovered in Realm of Split IV.  
-分割界・第四層で発見された集合知式入力装置群
+このリポジトリの有効な build 定義と artifact 名は [build.yaml](build.yaml) が正です。詳しい組み合わせの書式は [build-guidelines.md](docs/build-guidelines.md) を参照してください。
 
-## Classification | 分類
-- **Species**: Synaptica Modularis (集合知式入力装置群)
-- **Common Name**: MeKaBu (メカブ)
-- **Origin**: Realm of Split IV (分割界・第四層)
-- **Distribution**: Personal Workshops & Community Development Zones (個人工房、コミュニティ開発圏)
-- **Nature**: Extensible, Autonomous, Harmonious (拡張可能・自律型・協奏性)
+## GitHub Actions で firmware を取得する
 
-## Overview | 概要
-Futhesia Moduora is an intellectually and structurally evolving input device born from the collective knowledge and experience of multiple developers. While based on a split-grid input surface, its form can be freely altered through external modules (known as Nodes).
+1. `build.yaml` を編集して commit・push します。GitHub の **Actions** タブから **Build ZMK firmware** を手動実行しても構いません。
+2. workflow が成功したら、該当 run の下部にある **Artifacts** から `firmware` をダウンロードします。
+3. zip を展開し、`artifact-name` に対応する `.uf2` ファイルを確認します。左・右・central・peripheral を取り違えないでください。
 
-フセシア・モデュオラは、複数の開発者が知識と経験を持ち寄ることによって生まれた、知的・構造的進化を続ける入力装置である。その外見は、左右に分かれた格子状の入力面を基軸としながらも、外部モジュール（通称：Node）によって自在に形を変える。
+Actions が失敗した場合は、まず build 定義の snippet 名、shield 名、同時に指定したモジュールの競合を確認してください。Actions は新規環境で依存モジュールを取得するため、ローカルで以前に成功した build と結果が異なる場合があります。
 
-## Key Features | 特徴
-- **Cognitive Lattice (知の格子)**: Key layouts designed at the intersection of functional beauty and logic
-- **Modular Nexus (拡張構造)**: Freely interchangeable pointing devices, encoders, and sensors
-- **Resonant Evolution (共鳴型進化)**: Organic integration of developer codes and designs
-- **Tectonic Mode (テンティング適応)**: Physically adaptable form-factor
+## Seeed XIAO BLE への書き込み
 
-## Natural Habitat | 生態／運用環境
-Thrives in collaborative environments, particularly hackathons and technical conventions.
-単体での生息よりも、共創型の環境下において最も高いパフォーマンスを発揮する。
+1. 対象の半分を USB 接続します。
+2. リセットボタンを素早く2回押し、USB ストレージとして認識させます。
+3. 対象の `.uf2` ファイルを、そのドライブの直下へコピーします。
+4. コピー後に自動で再起動します。認識されない場合は USB を抜き差しして確認してください。
 
-### Current Keymap Configuration | 現在のキーマップ構成
-![MeKaBu Keymap](keymap-drawer/MKB.svg)
+central と peripheral は同じ build 世代の firmware を両方に書き込んでください。split 接続や Bluetooth 接続が不安定なときは、まず左右の役割、書き込んだ artifact、電源状態を確認します。設定を初期化する必要がある場合は、`settings_reset` artifact を**対象の半分だけ**に書き込む運用ができます。Bluetooth の保存情報などが消えるため、必要な場合だけ使用してください。
 
-## Etymology | 語源
-The name "MeKaBu" encompasses multiple meanings:
-- Mechanical Components (メカニカルな部品群)
-- Sprouting Stock - branching growth structure (芽株 - 分岐して増殖する構造)
+## 追加情報
 
----
-*This configuration exists in the liminal space between reality and digital dreams.*  
-*この設定は、現実とデジタルの夢の間の境界に存在する。*
+- キーマップは [config/MKB.keymap](config/MKB.keymap) にあります。snippet は配線・センサーを選ぶためのもので、通常のキー配列は変えません。
+- USB を PC に接続するのは central 側です。peripheral 側の USB 接続は書き込みや充電に使用します。
+- firmware の書き込み中は、他方の半分や外部モジュールを不用意に抜き差ししないでください。
