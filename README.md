@@ -21,24 +21,24 @@ MeKaBu は ZMK を使う左右分割キーボードです。トラックボー�
 
 `build.yaml` の `include` に、左右それぞれ1件ずつ build 定義を書きます。`snippet` は空白区切りで複数指定できます。
 
-左を central + EC11、右を peripheral + PAW3222 とする例です。
+右を central + PAW3222、左を peripheral + PAT9125 とする例です。
 
 ```yaml
 include:
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter
-    snippet: central encoder_ec11
+    shield: MKB_R rgbled_adapter
+    snippet: central trackball_paw3222
     cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
-    artifact-name: MKB_L_ENC_Central
+    artifact-name: MKB_R_PAW3222_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R rgbled_adapter
-    snippet: peripheral trackball_paw3222
+    shield: MKB_L rgbled_adapter
+    snippet: peripheral trackball_pat9125
     cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
-    artifact-name: MKB_R_PAW3222_Peripheral
+    artifact-name: MKB_L_PAT9125_Peripheral
 ```
 
-PAT9125 と PAW3222 を使う例です。
+モジュールを差し替える場合は、対象側の `snippet` と `artifact-name` を変更します。たとえば左 central + PAT9125、右 peripheral + PAW3222 では次のようになります。
 
 ```yaml
 snippet: central trackball_pat9125
