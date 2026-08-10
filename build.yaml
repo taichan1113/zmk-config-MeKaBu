@@ -1,21 +1,28 @@
 ---
 include:
-  # 左 central: EC11 / 右 peripheral: PAW3222
   - board: seeeduino_xiao_ble
-    shield: Central MKB_L ENC_L rgbled_adapter
-    snippet: encoder_ec11
-    artifact-name: MKB_L_ENC_Central
+    shield: MKB_R rgbled_adapter
+    snippet: central trackball_paw3222
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_R_PAW3222_Central
 
   - board: seeeduino_xiao_ble
-    shield: Peripheral MKB_R MKB_TB_PERIPHERAL rgbled_adapter
-    snippet: trackball_paw3222
-    artifact-name: MKB_R_PAW3222_Peripheral
+    shield: MKB_L rgbled_adapter
+    snippet: peripheral trackball_pat9125
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_L_PAT9125_Peripheral
 
-  # 左 central: PAT9125 / 右 peripheral: PAW3222
   - board: seeeduino_xiao_ble
-    shield: Central MKB_L MKB_TB_CENTRAL rgbled_adapter
-    snippet: trackball_pat9125
-    artifact-name: MKB_L_PAT9125_Central
+    shield: MKB_R rgbled_adapter
+    snippet: central trackball_pmw3610_alt
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_R_PMW3610_Central
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_L rgbled_adapter
+    snippet: peripheral encoder_ec11
+    cmake-args: -DKEYMAP_FILE=$GITHUB_WORKSPACE/config/MKB.keymap
+    artifact-name: MKB_L_ENC_Peripheral
 
   # ----------------------------------------------------------------------------
 

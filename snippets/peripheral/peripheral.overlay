@@ -1,0 +1,3 @@
+#undef MKB_ROLE_CENTRAL
+
+#include "../listners.dtsi"

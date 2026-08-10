@@ -28,6 +28,7 @@
 		motion-gpios = <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		res-x-cpi = <300>;
 		res-y-cpi = <300>;
+		report-interval-ms = <10>;
 		zephyr,axis-x = <INPUT_REL_X>;
 		zephyr,axis-y = <INPUT_REL_Y>;
 		// invert-x;
@@ -50,6 +51,18 @@
             ;
     };
 };
+
+#ifdef MKB_ROLE_CENTRAL
+&listner_central {
+    status = "okay";
+    device = <&trackball>;
+};
+#else
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};
+#endif
 
 // &pointer {
 //     status = "okay";

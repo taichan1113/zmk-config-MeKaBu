@@ -1,6 +1,0 @@
-#include "../../../snippets/listners.dtsi"
-
-&listner_central {
-    status = "okay";
-    device = <&trackball>;
-};

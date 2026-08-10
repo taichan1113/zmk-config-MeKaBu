@@ -10,9 +10,9 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball: trackball_pmw3610_alt@0 {
+    trackball: trackball_pmw3610@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <1500000>;
         irq-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -38,6 +38,18 @@
         ;
     };
 };
+
+#ifdef MKB_ROLE_CENTRAL
+&listner_central {
+    status = "okay";
+    device = <&trackball>;
+};
+#else
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};
+#endif
 
 // &pointer {
 //     status = "okay";

@@ -41,6 +41,18 @@
     };
 };
 
+#ifdef MKB_ROLE_CENTRAL
+&listner_central {
+    status = "okay";
+    device = <&trackball>;
+};
+#else
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};
+#endif
+
 // &pointer {
 //     status = "okay";
 //     device = <&trackball>;
